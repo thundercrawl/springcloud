@@ -1,0 +1,930 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body{
+  margin: 0;
+  background-color: #f4f7f6;
+  font-family: "Microsoft YaHei", "Helvetica Neue";
+  min-width: 1210px
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a:visited, a:hover, a:link {
+  font-weight: bold;
+}
+
+a {
+   text-decoration: none;
+   cursor:pointer
+}
+
+#banner {
+  padding: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px 0 rgba(40,40,40,.2);
+  box-sizing: border-box;
+  background: #fff;
+  position: absolute;
+  min-width: 1210px;
+  width: 100%;
+  top:0;
+  left: 0;
+  z-index: 999;
+}
+
+#navigation {
+  overflow: hidden;
+  background: hsla(0,0%,100%,.25);
+}
+
+#header {
+  text-align: center;
+  float: left;
+  font-size: 1.5em;
+  padding: 0 20px 0 0;
+  font-family: kaiti;
+  font-weight: bold;
+  color: #3c3669;
+}
+
+#header img{
+  height: 80px;
+  vertical-align: middle;
+}
+
+#tab {
+  overflow: hidden;
+  text-align: center;
+  float: left;
+  margin-top: 20px;
+}
+
+ul {
+  display: inline-block;
+}
+li {
+  list-style: none;
+  float: left;
+}
+
+#menuDropDown li {
+  float: none;
+  text-align: center;
+}
+
+#menuDropDown ul {
+  display: block;
+  padding: 0;
+}
+
+#tab li a {
+  font-size: 15px;
+  color: #BEC8D2;
+}
+
+#tab li .active {
+  color: #4D5766
+}
+
+#tab li .navigationItem {
+  padding: 10px 10px;
+}
+
+#langSwitcher:hover, #login:hover, #userCard:hover, #tab li .navigationItem:hover {
+  background-color: #dbe0df
+}
+
+#tab li .selected {
+  background: #fff;
+  border: solid transparent;
+  border-width: 1px 1px 3px;
+  border-radius: 3px 3px 0 0;
+  border-color: transparent transparent  #BEC8D2 ;
+  background: #fff
+}
+
+#widgetContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#langSwitcher, #login, #userCard {
+  position: relative;
+  float: left;
+  top: 0;
+  padding: 20px 20px;
+  cursor: pointer;
+  letter-spacing: 8px;
+  color: #4D5766;
+  font-weight: bold;
+  font-size: 1em;
+  margin: 20px 0;
+}
+
+#userCard span {
+  letter-spacing: 1px;
+}
+
+#login, #userCard {
+  right: 0;
+  border-left: 1px solid #e6eaea;
+}
+
+#langSwitcher {
+  left: 0;
+  border-left: 1px solid #e6eaea;
+}
+
+#langSwitcher::after, #userCard::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  width: 2px;
+  /* margin-left: -2px; */
+  border: solid transparent;
+  border-top-color: rgb(115, 123, 132);
+  border-width: 5px 3px;
+  -webkit-transition: border .3s ease-in-out;
+  transition: border .3s ease-in-out;
+}
+
+#menuDropDown {
+  letter-spacing: 0px;
+  background: #fff;
+}
+
+#menuDropDown li a{
+  font-weight: normal;
+  font-size: 10px;
+  padding: 20px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  background: #fff;
+  border-bottom: 1px solid #E6EAEA;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.wrapper {
+  padding-top: 100px;
+}
+
+.modelBackground {
+  position: absolute;
+  display: none;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.75);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.dialogFrame {
+  text-align: center;
+  width: 45%;
+  z-index: 1000;
+  background: #f4f7f6;
+  position: absolute;   
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);   
+  -moz-transform: translate(-50%, -50%);   
+  -ms-transform: translate(-50%, -50%);   
+  -o-transform: translate(-50%, -50%);   
+  transform: translate(-50%, -50%);
+}
+
+.dialogFrame .form input {
+  height: 45px;
+  width: 168px;
+  padding: 0 15px;
+  background: #fff;
+  border: 1px solid #dbe0df;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.dialogFrame .form .uploadButton {
+    width: 100px;
+    height: 40px;
+    padding: 0 35px;
+    background-color: #0372c0;
+    color: #fff;
+    line-height: 45px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 0;
+    overflow: hidden;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+#registerLink {
+  color: #0372c3
+}
+
+#loginForm h4 {
+  margin-left: 70px;
+}
+
+.dialogFrame .form .loginButton:hover {
+    color: #fff;
+    background-color: #0372c3;
+}
+
+.dialogFrame .closeLink {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 56px;
+  height: 70px;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.dialogFrame .closeLink::after, .dialogFrame .closeLink::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 3px;
+  background-color: white;
+}
+
+.dialogFrame .blackStyle::after, .dialogFrame .blackStyle::before {
+  background-color: black !important;
+}
+
+.dialogFrame .closeLink::after {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.dialogFrame .closeLink::before {
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+#mainContainer {
+  position: relative;
+  overflow: hidden;
+  height: 62%;
+}
+
+#mainContainer .background {
+  position: relative;
+}
+
+#mainContainer #content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 90px 50px 50px 200px;
+}
+
+#mainContainer #content .manager-info, #mainContainer #content .content-info{
+  width: 100%;
+  text-align: center;
+  color: #4D5766;
+}
+
+#mainContainer #content .manager-list, #mainContainer #content .content-list {
+  text-align: center;
+  color: #4D5766;
+}
+
+#mainContainer #content .content-list .testIcon{
+  width: 70px;
+  height: 70px;
+  margin: 40px 40px 10px 40px;
+  transition: all .3s ease-in-out;
+}
+
+#mainContainer #content .content-list .testIcon:hover{
+  width:80px;
+  height: 80px;
+}
+
+#mainContainer #content #box {
+  width: 400px;
+  margin-left: 500px;
+  display: none;
+  overflow: hidden;
+}
+
+#mainContainer #content #box .box-header {
+  color: #4D5766
+}
+
+#pannel {
+  padding: 50px;
+  text-align: center;
+}
+
+#pannel #test #test-header {
+  font-size: 2em;
+  color: #4D5766;
+  font-weight: bold;
+}
+
+#pannel #test #test-header img {
+  width: 60px;
+  padding: 0 20px 0 0;
+  vertical-align: middle;
+}
+
+#pannel #test-detail {
+  margin: 0px 200px;
+  text-align: left
+}
+#pannel #test-detail .test-intro {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  padding: 32px 48px 24px;
+  border: 1px solid #eee;
+  transition: all .5s;
+  background-color: #fff;
+  border-radius: 4px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.intro-title{
+  width: 80px;
+  margin-bottom: 26px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 2px;
+  text-align: center;
+  padding: 2px 4px;
+  background-color: #0372c0;
+}
+
+#pannel #test-detail .test-intro:hover {
+  margin: 10px;
+}
+
+#test-submit, #playSetting{
+    text-align: right;
+    margin: 10px 0px;
+}
+
+.submitTestButton, .backButton {
+    width: 200px;
+    height: 45px;
+    padding: 0 35px;
+    background-color: #0372c0;
+    color: #fff;
+    line-height: 45px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 0;
+    overflow: hidden;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+#mainContainer #content .manager-list li{
+    padding: 30px;
+}
+
+#mainContainer #content .manager-list li img{
+    width: 80px;
+    height: 70px;
+}
+
+#mainContainer #content .manager-list {
+    cursor: pointer;
+}
+
+#test_Manage {
+   min-height: 800px;
+}
+
+.table {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  padding: 32px 48px 24px;
+  border: 1px solid #eee;
+  transition: all .5s;
+  background-color: #fff;
+  border-radius: 4px;
+  margin: 60px 70px;
+}
+
+#managerTable h3 {
+  color: #4D5766;
+}
+
+#managerTable #tableContent {
+  font-size: 0.9em;
+  max-height: 300px;
+  overflow: auto;
+}
+
+#uploadDialog #managerTable #tableContent, #uploadDialog label {
+  font-size: 0.5em;
+}
+
+#managerTable table {
+  width:100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+#managerTable #tableField {
+  background-color: #0372c0;
+  color: #fff;
+  border: none;
+}
+
+#managerTable tr {
+  border-bottom: 1px solid #e6eaea;
+}
+
+#managerTable #addLink:hover{
+  background-color: #dbe0df
+}
+#managerTable #addLink {
+  cursor: pointer;
+}
+
+#managerTable tr img{
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+#managerTable td{
+  min-width: 10%;
+  max-width: 200px;
+  padding: 10px;
+  word-break: break-all;
+}
+
+#modelDialog {
+  text-align: left;
+  min-width: 670px;
+  background-color: white;
+}
+#modelDialog .closeLink{
+  right: 10px;
+  width: 30px;
+  height: 40px;
+}
+
+#modelDialog #regTable {
+  overflow: auto;
+  max-height: 400px;
+}
+#modelDialog .row, #uploadDialog .row{
+  margin: 10px;
+  border-bottom: 1px solid #E6EAEA;
+  overflow: hidden
+}
+
+.dialogTitle {
+  background-color: #0372c0;
+  color: #fff;
+  padding: 15px
+}
+
+#modelDialog form {
+  padding: 10px 25px;
+  font-size: 0.7em;
+}
+
+#modelDialog .row input{
+  border: none;
+  background-color: #f4f7f6;
+  border: 1px solid #E6EAEA;
+}
+
+#modelDialog .colum, #uploadDialog .colum{
+  margin: 10px;
+  float: left;
+  min-width: 95px;
+}
+#modelDialog .columMandatory, #uploadDialog .columMandatory {
+  float: left;
+}
+.mandatory {
+  color: red;
+  padding: 5px 1px 0 0
+}
+#modelDialog .columTitle {
+  margin: 10px;
+  float: left;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#modelDialog .subColum, #uploadDialog .subColum{
+  margin: 10px;
+  float: left;
+}
+
+.footer {
+  text-align: right;
+  padding-bottom: 25px;
+}
+
+.accontManage #mainContainer #boardTable .footer button, #modelDialog .footer button {
+    width: 100px;
+    height: 40px;
+    background-color: #0372c0;
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 0;
+    overflow: hidden;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    margin: 0 20px;
+}
+
+#managerInfo {
+  overflow: hidden;
+}
+#managerInfo .card {
+  background: white;
+  float: left;
+  border: solid 10px transparent;
+}
+
+#selectMach, #selectRFMach {
+  margin: 0 10px;
+  height: 25px;
+  box-shadow: 0 1px 4px 0 rgba(40,40,40,.2);
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+#regForm, #loginForm {
+  margin-left: 200px;
+  margin-right: auto;
+  margin-top: 50px;
+  float: left;
+}
+
+#regForm form, #loginForm form{
+  overflow: auto;
+  max-height: 370px;
+}
+
+#regForm p, #loginForm p{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#regForm p label, #loginForm p label{
+    display: block;
+    float: left;
+    height: 42px;
+    width: 65px;
+    margin-right: 10px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 700;
+    text-align: right;
+}
+#regForm p input, #loginForm p input{
+    display: block;
+    position: relative;
+    float: left;
+    height: 16px;
+    width: 328px;
+    padding: 11px 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
+    transition: .3s;
+}
+
+.emptyError{
+  display: inline-block;
+  margin: 10px 0;
+  color: #fc4343;
+  height: 16px;
+  line-height: 14px;
+  padding-left: 20px;
+  background: url(../resource/images/err_small.png) 0 0 no-repeat;
+}
+
+.successMessage{
+  display: inline-block;
+  color: #7ed244;
+  margin: 10px 0;
+  height: 16px;
+  line-height: 14px;
+  padding-left: 20px;
+  background: url(../resource/images/tick_small.png) 0 0 no-repeat;
+}
+
+.hidden{
+  display: none !important;
+}
+
+#regForm p button, #loginForm p button{
+  background-color: #0372c0;
+    width: 350px;
+    display: block;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    background-image: none;
+    border-radius: 3px;
+    border: 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    -webkit-transition: .3s;
+    margin-left: 70px;
+}
+
+.accontManage #navigation {
+  float: left;
+      display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    background: 50% 50% no-repeat fixed #f5f5f4;
+    background-size: cover;
+}
+
+.accontManage body {
+  background: #e4e4e4;
+}
+
+.accontManage .wrapper {
+  padding-top: 90px;
+}
+
+.accontManage #mainContainer {
+  float: left;
+  background: #e4e4e4;
+  margin: 50px;
+  width: 70%;
+}
+
+.accontManage #navigation li{
+  float: none
+}
+
+.accontManage #navigation li .navigationItem {
+    padding: 20px 55px;
+}
+
+.accontManage #navigation ul{
+  padding: 0
+}
+
+.accontManage #navigation #tab{
+    text-align: center;
+    margin-top: 20px;
+    width: auto
+}
+.accontManage #navigation li .selected{
+  border-color: transparent transparent transparent #0372c0;
+  background: #fff;
+  cursor: pointer;
+  border-width: 0px 0px 0px 5px;
+  border-radius: 0px 0px 0 0;
+}
+
+.accontManage #mainContainer #boardTable{
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  padding: 32px 48px 24px;
+  border: 1px solid #eee;
+  transition: all .5s;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.accontManage #mainContainer #boardTable .row {
+  margin: 10px;
+  border-bottom: 1px solid #E6EAEA;
+}
+
+.accontManage #mainContainer #boardTable .row span{
+  display: inline-block;
+  min-width: 80px;
+}
+
+.accontManage #mainContainer #boardTable .row input{
+  background-color: #f4f7f6;
+  height: 5px;
+  width: 328px;
+  padding: 11px 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #666;
+  transition: .3s;
+}
+
+.accontManage #mainContainer #boardTable .colum {
+  margin: 10px;
+  min-width: 80px;
+}
+
+.accontManage #mainContainer #boardTable .footer{
+  text-align: right;
+}
+
+#uploadDialog .form input {
+  display: inline-block;
+  height: auto;
+  width: auto;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #dbe0df;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+#uploadDialog {
+  text-align: left
+}
+
+#uploadDialog form {
+  padding: 25px;
+}
+
+#uploadDialog #closeLink{
+    position: absolute;
+    top: 1px;
+    right: 0;
+    width: 56px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+ #uploadDialog .footer{
+   text-align: right;
+ }
+
+ #testFile span {
+   font-weight: bold;
+   padding: 10px;
+ }
+
+ .showError {
+    display: inline-block;
+    margin-left: 70px;
+ }
+
+ .downloadButton {
+    padding: 0 35px;
+    background-color: #0372c0;
+    color: #fff;
+    line-height: 35px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 0;
+    overflow: hidden;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    margin: 0 10px;
+}
+
+#downloadFooter {
+  text-align: right;
+  padding: 10px;
+}
+
+#downloadFooter label {
+  font-size: 0.5em;
+}
+
+#progressContainer {
+  float: left;
+  width: 200px;
+  height: 20px;
+  margin: 10px 0 0 0;
+}
+
+#progressContainer div {
+  height: 20px;
+  background: #5aa3d6;
+  text-align: center;
+  width: 0;
+  font-size: 0.5em;
+  line-height: 1.7;
+}
+
+#messageBox {
+  position: fixed;
+  width: 100%;
+  top: 100px;
+  display: none;
+  font-size: 0.8em;
+}
+
+#messageBox div {
+  margin: 5px 80px 0 70px;
+  padding: 10px 20px;
+  background: white;
+}
+
+#messageBox div img, #viewerMessage img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+#messageBox div span, #viewerMessage span {
+  padding: 0 10px;
+}
+
+#viewerMessage {
+  font-size: 0.8em;
+}
+
+#viewerMessage #closeMessageBox {
+  right: 50px
+}
+
+#closeMessageBox {
+  right: 90px;
+  position: absolute;
+}
+
+#ggaContainer div {
+  float: left;
+  margin: 0 30px;
+}
+
+#ggaContainer div label{
+  font-weight: bold;
+  padding: 10px;
+}
+
+#frequencyFile span, #frequencyFile a{
+    padding: 0 10px;
+}
+#agentStatusIcon {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle
+}
+#errorMessage {
+  padding: 10px 30px;
+}
+#errorMessage img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#errorMessage span {
+  padding: 5px;
+}
+#reportTitle {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#reportContent {
+  padding: 30px 60px;
+}
+
+.select {
+  padding: 5px 0;
+}
