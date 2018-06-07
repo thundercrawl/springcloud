@@ -1,0 +1,4 @@
+http://projects.spring.io/spring-cloud/
+
+Still only work for Finchley snapshot versions until now, 6/7/2018
+
