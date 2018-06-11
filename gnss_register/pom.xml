@@ -10,7 +10,7 @@
 </parent>
   <groupId>sc_ai</groupId>
   <artifactId>gnss_register</artifactId>
-  <version>0.0.1-RELEASE</version>
+  <version>0.0.1-SNAPSHOT</version>
   <name>gnss_register</name>
   <url>http://maven.apache.org</url>
  <properties>
