@@ -13,7 +13,7 @@ public class SearchController {
 
 	@Autowired
 	SearchEntry searchSrv;
-	@RequestMapping("/search")
+	@RequestMapping(value = "/search")
 	public String SearchByKeyWorkds(@RequestParam String name)
 	{
 		return searchSrv.remoteSearchByKeywords(name);
