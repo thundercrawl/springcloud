@@ -3,7 +3,7 @@
 #eurake 
 #ribbon clients with load balance.
 
-use the recently used spring cloud features
+use the recently  spring cloud features
 
 1.go to register directory
 mvn spring-boot:run start the central register server.
