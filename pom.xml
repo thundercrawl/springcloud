@@ -64,5 +64,6 @@
 <module>gnss_register</module>
 	<module>gnss_services_search</module>
     <module>gnss_rest</module>
+    <module>flog</module>
   </modules>
 </project>
