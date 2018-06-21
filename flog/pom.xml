@@ -16,11 +16,73 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>2.11.0</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.11.0</version>
+  </dependency>
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+   
   </dependencies>
+
+  <build>
+  <plugins>
+  <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-assembly-plugin</artifactId>
+    <executions>
+      <execution>
+         <goals>
+           <goal>single</goal>
+         </goals>
+    <phase>package</phase>
+         <configuration>
+           <descriptorRefs>
+             <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>org.flog.FLogFactory</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+     </execution>
+  </executions>
+</plugin>
+<plugin>
+
+<groupId>org.apache.maven.plugins</groupId>
+
+<artifactId>maven-compiler-plugin</artifactId>
+
+<configuration>
+
+<source>1.8</source>
+
+<target>1.8</target>
+
+
+</configuration>
+
+</plugin>
+
+    <plugin>
+      <groupId>org.jacoco</groupId>
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>0.8.1</version>
+     <executions><execution><id>default-prepare-agent</id><goals><goal>prepare-agent</goal></goals></execution><execution><id>default-report</id><goals><goal>report</goal></goals></execution><execution><id>default-check</id><goals><goal>check</goal></goals><configuration><rules><!-- implementation is needed only for Maven 2 --><rule implementation="org.jacoco.maven.RuleConfiguration"><element>BUNDLE</element><limits><!-- implementation is needed only for Maven 2 --><limit implementation="org.jacoco.report.check.Limit"><counter>COMPLEXITY</counter><value>COVEREDRATIO</value><minimum>0.60</minimum></limit></limits></rule></rules></configuration></execution></executions>
+    </plugin>
+</plugins>
+</build>
 </project>

@@ -15,8 +15,8 @@ public class SearchController {
 	@Autowired
 	SearchEntry searchSrv;
 	@RequestMapping(value = "/search")
-	public String SearchByKeyWorkds(@RequestParam String name)
+	public String SearchByKeyWorkds(@RequestParam String key)
 	{
-		return searchSrv.remoteSearchByKeywords(name);
+		return searchSrv.remoteSearchByKeywords(key);
 	}
 }

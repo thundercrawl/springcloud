@@ -20,8 +20,8 @@ public class SearchServices
     
     @Value("${server.port}")
     String port;
-    @RequestMapping("/hi")
-    public String home(@RequestParam String name) {
-        return "searchServices"+name+",i am from port:" +port;
+    @RequestMapping("/search")
+    public String search(@RequestParam String content,@RequestParam String type) {
+        return "searchServices"+content+",i am from port:" +port;
     }
 }

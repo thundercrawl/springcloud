@@ -3,7 +3,8 @@ package org.flog;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 /**
  * Unit test for simple App.
  */
@@ -34,5 +35,9 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+        Logger log = LogManager.getLogger();
+        log.debug("in debug");
+        log.info("in info");
+        log.warn("in warn");
     }
 }

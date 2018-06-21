@@ -13,11 +13,11 @@ public class SearchEntry {
 	@Autowired
     RestTemplate restTemplate;
 	
-	public String remoteSearchByKeywords(String name)
+	public String remoteSearchByKeywords(String key)
 	{
-
-		System.out.println("enter services request："+System.currentTimeMillis());
-		String rslt =  restTemplate.getForObject("http://SERVICES-SEARCH/hi?name="+name,String.class);
+		String rslt =  restTemplate.getForObject("http://SERVICES-SEARCH/hi?name="+key,String.class);
 		return rslt;
 	}
+
+	
 }
