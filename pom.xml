@@ -65,5 +65,6 @@
 	<module>gnss_services_search</module>
     <module>gnss_rest</module>
     <module>flog</module>
+    <module>serviceLogger</module>
   </modules>
 </project>

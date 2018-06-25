@@ -23,7 +23,7 @@
 		
 		<RollingFile name="infoLog" fileName="${sys:APP_LOG_ROOT}/application-info.log" 
 			filePattern="${sys:APP_LOG_ROOT}/application-info-%d{yyyy-MM-dd}-%i.log" >
-			<LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+			<LevelRangeFilter minLevel="INFO" maxLevel="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
 			<PatternLayout pattern="${LOG_PATTERN}"/>
 			<Policies>
 				<SizeBasedTriggeringPolicy size="19500KB" />
@@ -59,6 +59,16 @@
 			<DefaultRolloverStrategy max="1"/>
 		</RollingFile>
 		
+		<Kafka name="Kafka" topic="flog">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Property name="bootstrap.servers">localhost:9092</Property>
+        </Kafka>
+        
+		
+		<Async name="Async">
+			<AppenderRef ref="infoLog"/>
+            <AppenderRef ref="Kafka"/>
+        </Async>
     </Appenders>
 
     <Loggers>
@@ -80,9 +90,12 @@
             <AppenderRef ref="Console"/>
         </Logger>
                 -->
+           <Logger name="org.apache.kafka" level="WARN" />
+            
         <Root level="all">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="infoLog"/>
+             <AppenderRef ref="Kafka"/>
         </Root>
 
     </Loggers>
